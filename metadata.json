@@ -1,0 +1,6 @@
+{
+  "name": "Zekrayat",
+  "description": "حلل محادثات واتساب بدقة وشاهد محاكاة حية وتفاعلية لرسائل الشات كأنها على تطبيق واتساب الحقيقي مع إحصائيات شاملة.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
