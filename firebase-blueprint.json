@@ -23,7 +23,7 @@
         "photoURL": {
           "type": "string",
           "description": "User avatar photo URL",
-          "maxLength": 500
+          "maxLength": 2000
         },
         "createdAt": {
           "type": "string",

@@ -12,7 +12,7 @@ import {
   Info
 } from 'lucide-react';
 import { ChatAnalysis, SavedChatRecord } from '../types/chat';
-import { FirebaseUser } from '../lib/firebase';
+import { AppUser } from '../lib/firebase';
 import { SavedMemoriesCard } from './SavedMemoriesCard';
 import { PlatformGuideCard } from './PlatformGuideCard';
 
@@ -32,13 +32,14 @@ interface PermanentControlsProps {
   onRestart: () => void;
   onShowAll: () => void;
   onLoadChat?: (text: string, title?: string) => void;
-  user: FirebaseUser | null;
+  user: AppUser | null;
   isAuthLoading: boolean;
   savedChats: SavedChatRecord[];
   activeChatId: string | null;
   currentRawContent: string;
   currentFileName: string;
   onLoadSavedChat: (chat: SavedChatRecord) => void;
+  onOpenAuthModal?: () => void;
 }
 
 export const PermanentControls: React.FC<PermanentControlsProps> = ({
@@ -63,6 +64,7 @@ export const PermanentControls: React.FC<PermanentControlsProps> = ({
   currentRawContent,
   currentFileName,
   onLoadSavedChat,
+  onOpenAuthModal,
 }) => {
   const participantNames = Object.keys(analysis.participants);
 
@@ -210,6 +212,7 @@ export const PermanentControls: React.FC<PermanentControlsProps> = ({
         currentRawContent={currentRawContent}
         currentFileName={currentFileName}
         onLoadSavedChat={onLoadSavedChat}
+        onOpenAuthModal={onOpenAuthModal}
       />
 
       {/* 4. PERMANENT SUMMARY STATS CARD (إحصائيات فورية ثابتة أمام المستخدم) */}

@@ -25,7 +25,7 @@ service cloud.firestore {
         data.uid == request.auth.uid &&
         data.email is string && data.email.size() <= 150 &&
         (!('displayName' in data) || (data.displayName is string && data.displayName.size() <= 100)) &&
-        (!('photoURL' in data) || (data.photoURL is string && data.photoURL.size() <= 500));
+        (!('photoURL' in data) || (data.photoURL is string && data.photoURL.size() <= 2000));
     }
 
     function isValidSavedChat(data, userId) {
